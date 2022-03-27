@@ -19,7 +19,7 @@ Copyright 2015, 2019, 2020, 2021 Google LLC. All Rights Reserved.
 const OFFLINE_VERSION = 1;
 const CACHE_NAME = "offline";
 // Customize this with a different URL if needed.
-const OFFLINE_URL = "/offline.html";
+const OFFLINE_URL = "/offline";
 
 self.addEventListener("install", (event) => {
     event.waitUntil(
@@ -28,7 +28,16 @@ self.addEventListener("install", (event) => {
             // Setting {cache: 'reload'} in the new request will ensure that the
             // response isn't fulfilled from the HTTP cache; i.e., it will be from
             // the network.
-            await cache.addAll(['/']);
+            await cache.addAll([
+                '/offline',
+                '/styles.css',
+                '/scripts.js',
+                '/logo.png',
+                'https://use.fontawesome.com/releases/v6.1.0/js/all.js',
+                'https://fonts.googleapis.com/css?family=Montserrat:400,700',
+                'https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic',
+                'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js'
+            ]);
         })()
     );
     // Force the waiting service worker to become the active service worker.

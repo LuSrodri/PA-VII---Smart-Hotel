@@ -14,6 +14,18 @@ app.get('/offline', (req, res) => {
   res.sendFile(__dirname + '/offline.html');
 })
 
+app.get('/styles.css', (req, res) => {
+  res.sendFile(__dirname + '/css/styles.css');
+})
+
+app.get('/scripts.js', (req, res) => {
+  res.sendFile(__dirname + '/js/scripts.js');
+})
+
+app.get('/logo.png', (req, res) => {
+  res.sendFile(__dirname + '/assets/img/logo.png');
+})
+
 app.listen(port, () => {
   //console.log(`Example app listening on port ${port}`)
 })
