@@ -11,6 +11,18 @@
             "src": "/assets/img/logo-smarthotel-192.png",
             "sizes": "192X192",
             "type": "image/png"
+        },
+        {
+            "src": "/assets/img/maskable_icon_x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/assets/img/maskable_icon_x192.png",
+            "sizes": "192X192",
+            "type": "image/png",
+            "purpose": "any maskable"
         }
     ],
     "start_url": "/",
