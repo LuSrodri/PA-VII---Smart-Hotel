@@ -28,9 +28,8 @@ self.addEventListener("install", (event) => {
             // Setting {cache: 'reload'} in the new request will ensure that the
             // response isn't fulfilled from the HTTP cache; i.e., it will be from
             // the network.
-            await cache.add(new Request(OFFLINE_URL, { cache: "reload" }));
             await cache.addAll([
-                '/offline',
+                new Request(OFFLINE_URL, { cache: "reload" }),
                 '/styles.css',
                 '/scripts.js',
                 '/logo.png',
