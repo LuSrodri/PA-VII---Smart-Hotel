@@ -28,14 +28,8 @@ self.addEventListener("install", (event) => {
             // Setting {cache: 'reload'} in the new request will ensure that the
             // response isn't fulfilled from the HTTP cache; i.e., it will be from
             // the network.
-            new Request(OFFLINE_URL, {cache: "reload"});
-            await cache.addAll([
-                '/offline.html',
-                '/css/style.css',
-                '/js/script.js',
-                '/',
-                '/assets/img',
-            ]);
+            await cache.add(new Request(OFFLINE_URL, { cache: "reload" }));
+            await cache.addAll(['/']);
         })()
     );
     // Force the waiting service worker to become the active service worker.
