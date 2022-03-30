@@ -4,15 +4,12 @@
   "description": "PA VII - SmartHotel\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[C Hotel",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "npm install & node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.3",
-    "workbox-precaching": "^6.5.2",
-    "workbox-routing": "^6.5.2",
-    "workbox-webpack-plugin": "^6.5.2"
+    "express": "^4.17.3"
   }
 }
