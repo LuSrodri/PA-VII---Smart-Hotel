@@ -10,7 +10,7 @@ Copyright 2015, 2019, 2020, 2021 Google LLC. All Rights Reserved.
  See the License for the specific language governing permissions and
  limitations under the License.
 */
-
+console.log("Hi from sw")
 // Incrementing OFFLINE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 // This variable is intentionally declared and unused.
@@ -19,7 +19,7 @@ Copyright 2015, 2019, 2020, 2021 Google LLC. All Rights Reserved.
 const OFFLINE_VERSION = 1;
 const CACHE_NAME = "offline";
 // Customize this with a different URL if needed.
-const OFFLINE_URL = "/offline";
+const OFFLINE_URL = "offline.html";
 
 self.addEventListener("install", (event) => {
     event.waitUntil(
@@ -28,16 +28,11 @@ self.addEventListener("install", (event) => {
             // Setting {cache: 'reload'} in the new request will ensure that the
             // response isn't fulfilled from the HTTP cache; i.e., it will be from
             // the network.
-            await cache.addAll([
-                new Request(OFFLINE_URL, { cache: "reload" }),
-                '/styles.css',
-                '/scripts.js',
-                '/logo.png',
+            await cache.addAll(['/', '/offline.html', '/styles.css', '/scripts.js', '/logo.png',
+                'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js',
                 'https://use.fontawesome.com/releases/v6.1.0/js/all.js',
                 'https://fonts.googleapis.com/css?family=Montserrat:400,700',
-                'https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic',
-                'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js'
-            ]);
+                'https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic']);
         })()
     );
     // Force the waiting service worker to become the active service worker.
@@ -88,6 +83,16 @@ self.addEventListener("fetch", (event) => {
                 }
             })()
         );
+    }
+    else {
+
+        event.respondWith(
+            fetch(event.request)
+                .catch(error => {
+                    return caches.match(event.request);
+                })
+        );
+
     }
 
     // If our if() condition is false, then this fetch handler won't intercept the
