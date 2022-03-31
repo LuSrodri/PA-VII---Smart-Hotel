@@ -911,11 +911,13 @@
                 }, time * i)
             });
         }
-        window.addEventListener("load", () => {
-            if ("serviceWorker" in navigator) {
-                navigator.serviceWorker.register("service-worker.js");
-            }
-        });
+
+        //registrando service-worker.js
+        // window.addEventListener("load", () => {
+        //     if ("serviceWorker" in navigator) {
+        //         navigator.serviceWorker.register("service-worker.js");
+        //     }
+        // });
     </script>
 </body>
 
