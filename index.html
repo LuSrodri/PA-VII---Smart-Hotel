@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <meta name="theme-color" content="#0E185F"/>
+    <meta name="theme-color" content="#0E185F" />
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="apple-touch-icon" href="/assets/img/logo-smarthotel-192.png">
     <title>O Mundo Mágico você encontra aqui - Smart Hotel </title>
@@ -913,11 +913,9 @@
         }
 
         //registrando service-worker.js
-        window.addEventListener("load", () => {
-            if ("serviceWorker" in navigator) {
-                navigator.serviceWorker.register("./service-worker.js");
-            }
-        });
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("./service-worker.js");
+        }
     </script>
 </body>
 
