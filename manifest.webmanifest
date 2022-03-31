@@ -3,23 +3,23 @@
     "name": "Smart Hotel - Seu Mundo Mágico",
     "icons": [
         {
-            "src": "/assets/img/logo-smarthotel-512.png",
+            "src": "/img/logo-smarthotel-512.png",
             "sizes": "512x512",
             "type": "image/png"
         },
         {
-            "src": "/assets/img/logo-smarthotel-192.png",
+            "src": "/img/logo-smarthotel-192.png",
             "sizes": "192X192",
             "type": "image/png"
         },
         {
-            "src": "/assets/img/maskable_icon_x512.png",
+            "src": "/img/maskable_icon_x512.png",
             "sizes": "512x512",
             "type": "image/png",
             "purpose": "any maskable"
         },
         {
-            "src": "/assets/img/maskable_icon_x192.png",
+            "src": "/img/maskable_icon_x192.png",
             "sizes": "192X192",
             "type": "image/png",
             "purpose": "any maskable"
