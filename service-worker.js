@@ -10,7 +10,7 @@ Copyright 2015, 2019, 2020, 2021 Google LLC. All Rights Reserved.
  See the License for the specific language governing permissions and
  limitations under the License.
 */
-console.log("Hi from sw")
+
 // Incrementing OFFLINE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 // This variable is intentionally declared and unused.
