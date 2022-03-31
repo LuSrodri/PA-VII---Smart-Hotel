@@ -26,10 +26,6 @@ app.get('/logo.png', (req, res) => {
   res.sendFile(__dirname + '/assets/img/logo.png');
 })
 
-app.get('/service-worker.js', (req, res) => {
-  res.sendFile(__dirname + '/service-worker.js'); 
-})
-
 app.listen(port, () => {
   //console.log(`Example app listening on port ${port}`)
 })
