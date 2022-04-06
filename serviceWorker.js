@@ -25,9 +25,6 @@ self.addEventListener("install", (event) => {
     event.waitUntil(
         (async () => {
             const cache = await caches.open(CACHE_NAME);
-            // Setting {cache: 'reload'} in the new request will ensure that the
-            // response isn't fulfilled from the HTTP cache; i.e., it will be from
-            // the network.
             await cache.addAll(['/', '/offline.html', '/styles.css', '/scripts.js', '/logo.png',
                 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js',
                 'https://use.fontawesome.com/releases/v6.1.0/js/all.js',
@@ -57,6 +54,7 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("fetch", (event) => {
     // We only want to call event.respondWith() if this is a navigation request
     // for an HTML page.
+
     if (event.request.mode === "navigate") {
         event.respondWith(
             (async () => {
@@ -66,6 +64,14 @@ self.addEventListener("fetch", (event) => {
                     if (preloadResponse) {
                         return preloadResponse;
                     }
+
+                    const cache = await caches.open(CACHE_NAME);
+                    await cache.addAll(['/', '/offline.html', '/styles.css', '/scripts.js', '/logo.png',
+                        'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js',
+                        'https://use.fontawesome.com/releases/v6.1.0/js/all.js',
+                        'https://fonts.googleapis.com/css?family=Montserrat:400,700',
+                        'https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic']);
+
 
                     // Always try the network first.
                     const networkResponse = await fetch(event.request);
