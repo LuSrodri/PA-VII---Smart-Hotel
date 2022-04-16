@@ -41,8 +41,6 @@
                             href="#about">SOBRE</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
                             href="#contact">CONTATO</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="#download">DOWNLOAD</a></li>
                 </ul>
             </div>
         </div>
@@ -304,8 +302,7 @@
             </div>
             <!-- About Section Content-->
             <div style="display: flex; justify-content: center;">
-                <p class="lead" style="max-width: 750px; text-align: justify;">Nós somos uma curadoria de Acomodações
-                    Extraordinárias e
+                <p class="lead" style="max-width: 750px;">Nós somos uma curadoria de Acomodações Extraordinárias e
                     Únicas. Encontre aqui a hospedagem perfeita para sua próxima viagem, desde casas futuristas, até
                     barcos ou arcas encalhadas. Você pode viver uma experiência espetacular, só ver umas de nossas
                     recomendações e aproveitar.</p>
@@ -339,31 +336,6 @@
                             class="fa-brands fa-whatsapp"></i> </a>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- Download Section-->
-    <section class="page-section bg-primary text-white mb-0" id="download">
-        <div class="container">
-            <!-- About Section Heading-->
-            <h2 class="page-section-heading text-center text-uppercase text-white">DOWNLOAD</h2>
-            <!-- Icon Divider-->
-            <div class="divider-custom divider-light">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                <div class="divider-custom-line"></div>
-            </div>
-            <!-- About Section Content-->
-            <div style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
-                <p class="lead" id="msgDownload">Baixe o nosso App em seu dispositivo!</p>
-                <a id="downloadButton" class="btn btn-primary btn-lg" style="width: 50vmin;">Download <i
-                        class="fa-solid fa-download"></i></a>
-
-            </div>
-
         </div>
     </section>
     <!-- Footer-->
@@ -1267,34 +1239,6 @@
         function openLink(link) {
             window.location.href = link;
         }
-
-        let deferredPrompt;
-
-        window.addEventListener('beforeinstallprompt', (e) => {
-            // Impede que o mini-infobar apareça em mobile
-            e.preventDefault();
-            // Guarda evento para que possa ser disparado depois.
-            deferredPrompt = e;
-        });
-
-        let buttonInstall = document.getElementById("downloadButton");
-
-        buttonInstall.addEventListener('click', async () => {
-            // Mostra prompt de instalação
-            try {
-                deferredPrompt.prompt();
-            } catch (error) {
-                document.getElementById("msgDownload").innerHTML = "Esse dispositivo não é compatível com a instalação do App.";
-                document.getElementById("msgDownload").className = "lead text-danger";
-            }
-            // Espera usuário responder ao prompt
-            const { outcome } = await deferredPrompt.userChoice;
-            // Opcionalmente, enviar evento analytics com resultado da escolha do usuário
-            // console.log(`User response to the install prompt: ${outcome}`);
-            // Usamos o prompt e não podemos usar de novo; jogue fora
-            deferredPrompt = null;
-        });
-
     </script>
 </body>
 

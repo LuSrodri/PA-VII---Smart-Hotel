@@ -9,8 +9,12 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 })
 
-app.get('/offline.html', (req, res) => {
+app.get('/offline', (req, res) => {
   res.sendFile(__dirname + '/offline.html');
+})
+
+app.get('/pwa', (req, res) => {
+  res.sendFile(__dirname + '/pwa.html');
 })
 
 app.get('/styles.css', (req, res) => {
