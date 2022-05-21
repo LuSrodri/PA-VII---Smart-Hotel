@@ -1,5 +1,7 @@
 ﻿# :star2: SMART HOTEL :star2:
 
+<img src="/fotos_README/SmartHotel.gif">
+
 <p>Um projeto acadêmico desenvolvido para disciplina de "PA - Projeto Aplicado à Engenharia de Computação VII" na Facens.</p>
 <p>Sorocaba, São Paulo, Brasil.</p>
 
