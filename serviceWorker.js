@@ -25,7 +25,7 @@ self.addEventListener("install", (event) => {
     event.waitUntil(
         (async () => {
             const cache = await caches.open(CACHE_NAME);
-            await cache.addAll(['/', '/offline.html', '/styles.css', '/scripts.js', '/logo.png',
+            await cache.addAll(['/', '/offline', '/styles.css', '/scripts.js', '/logo.png',
                 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js',
                 'https://use.fontawesome.com/releases/v6.1.0/js/all.js',
                 'https://fonts.googleapis.com/css?family=Montserrat:400,700',
@@ -66,7 +66,7 @@ self.addEventListener("fetch", (event) => {
                     }
 
                     const cache = await caches.open(CACHE_NAME);
-                    await cache.addAll(['/', '/offline.html', '/styles.css', '/scripts.js', '/logo.png',
+                    await cache.addAll(['/', '/offline', '/styles.css', '/scripts.js', '/logo.png',
                         'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js',
                         'https://use.fontawesome.com/releases/v6.1.0/js/all.js',
                         'https://fonts.googleapis.com/css?family=Montserrat:400,700',

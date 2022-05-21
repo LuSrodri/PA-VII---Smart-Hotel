@@ -33,8 +33,8 @@ app.get('/serviceWorker.js', (req, res) => {
   res.sendFile(__dirname + '/serviceWorker.js'); 
 })
 
-app.get('/manifest.webmanifest', (req, res) => {
-  res.sendFile(__dirname + '/manifest.webmanifest');
+app.get('/manifest.json', (req, res) => {
+  res.sendFile(__dirname + '/manifest.json');
 })
 
 app.listen(port, () => {
