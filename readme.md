@@ -38,5 +38,6 @@
 <h2 id="instalar">:pencil2: Como Instalar</h2>
 <p>Em um computador com <a href="https://git-scm.com/downloads">Git</a> e <a href="https://nodejs.org/en/">NPM/Node.js versão 16</a> ou mais recente instalado execute os seguintes passos:</p>
  - No git bash execute o comando <code>git clone https://github.com/LuSrodri/PA-VII---Smart-Hotel.git</code>; <br>
+ - Acesse a raiz do projeto <code>cd PA-VII---Smart-Hotel/</code>; <br>
  - Na raiz do projeto execute o comando <code>npm start</code>; <br>
  - Acesse <a href="localhost:3000">localhost:3000</a> e aproveite! :relaxed:
