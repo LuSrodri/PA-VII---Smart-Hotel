@@ -34,6 +34,7 @@
 <img src="./fotos_README/img5.png">
 <img src="./fotos_README/img6.png">
 <img src="./fotos_README/img7.png">
+<img src="./fotos_README/img9.png">
 
 <h2 id="instalar">:pencil2: Como Instalar</h2>
 <p>Em um computador com <a href="https://git-scm.com/downloads">Git</a> e <a href="https://nodejs.org/en/">NPM/Node.js versão 16</a> ou mais recente instalado execute os seguintes passos:</p>
